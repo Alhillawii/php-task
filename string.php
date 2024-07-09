@@ -51,7 +51,7 @@
 
         // //splits string returns an array of string//
         // echo '<hr>';
-        // $split = "My Name ayah";
+        // $split = "My,Name,ayah";
         // $splits = explode("," , $string);
         // print_r($splits);
         
