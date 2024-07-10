@@ -10,19 +10,19 @@
     ///1/a///
     $word = "this Tasks It's So Bigger Coach Moumen";
     $uppercase = strtoupper($word);
-    echo $uppercase . "\n";
+    echo $uppercase;
      ///1/b///
      echo '<hr>';
      $lower = strtolower($word);
-     echo $lower . "\n";
+     echo $lower;
      //1/c//
      echo '<hr>';
      $firstltter = ucfirst($word);
-     echo $firstltter . "\n";
+     echo $firstltter;
      //1/d//
      echo '<hr>';
      $eachword = ucwords( "moumen" ,$word );
-     echo $eachword . "\n";
+     echo $eachword;
 
      ///2///
      echo '<hr>';
@@ -31,7 +31,7 @@
      $minutes = substr($time , 2 ,2);
      $seconds = substr($time , 4 , 2);
      $date = $hour . ":" . $minutes . ":" . $seconds;
-     echo $date . "\n";
+     echo $date;
 
      //3//
      echo '<hr>';
@@ -40,26 +40,26 @@
      if (stripos($sentence , $put) !== false){
         echo "word Found \n";
      }else {
-        echo "word not  found \n";
+        echo "word not  found";
      }
 
      //4//
      echo '<hr>';
      $url = "www.orange.com/index.php";
      $file_name = basename($url);
-     echo $file_name . "\n";
+     echo $file_name;
 
      //5//
      echo '<hr>';
      $email =  "info@orange.com";
      $username = strtr($email , '@' , true);
-     echo $username . "\n";
+     echo $username;
 
      //6//
      echo '<hr>';
      $string = "info@orange.com";
      $lastthree = substr($string , -3);
-     echo $lastthree . "\n";
+     echo $lastthree;
 
      //7//
      echo '<hr>';
@@ -77,7 +77,7 @@
     //  $strings = '1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
     //  $pasword_lenght = 8;
     //  $ran = get($strings , $pasword_lenght);
-    //  echo $ran . "\n";
+    //  echo $ran;
      //??????????//
 
      //8//
@@ -92,12 +92,79 @@
     $sentence = 'That new trainee is so genius.';
     $new_word = 'Our';
     $new_sentence = replaceFirstWord($sentence, $new_word);
-    echo  $new_sentence . "\n";
+    echo  $new_sentence;
 
     //9//
     echo ' <hr>';
+    $twin = "Twinkle, twinkle, little star.";
+    $array = explode(" ", $twin);
+    var_dump($array);
 
     ///10//
+    echo '<hr>';
+    echo strcmp('dragonball','dragonball');
+
+    //11/
+    echo '<hr>';
+//     function getNextLetter($letter) {
+//       if (strlen($letter) !== 1 || !ctype_alpha($letter)) {
+//           return "Invalid input. Please enter a single alphabetical character.";
+//       }
+//       $letter = strtolower($letter);
+//       $nextLetter = chr((ord($letter) - ord('a') + 1) % 26 + ord('a'));
+  
+//       return $nextLetter;
+//   }
+
+//   $inputLetter = 'a';
+// echo "Input Letter: $inputLetter\n";
+// $nextLetter = getNextLetter($inputLetter);
+// echo "Next Letter: $nextLetter\n";
+
+    //12//
+    echo '<hr>';
+    $st = 'The brown fox';
+    $insert = ' quik';
+    $insert2 = 4;
+    $newstr = substr_replace($st, $insert, $insert2, 0);
+    echo $newstr;
+
+    //13//
+    echo '<hr>';
+    $num = "000065722.24";
+    $tri =  trim($num , 0);
+    echo $tri;
+
+    //14//
+    echo '<hr>';
+    $text = 'The quick brwon fox jumps over the lazy dog';
+    $te = 'fox';
+    $replace =  str_replace($text , "" , $te);
+    echo $replace;
+
+    //15//
+    echo  '<hr>';
+    $textt = "The quick brown fox jumps over the lazy dog---";
+    $tes = trim($textt , "-");
+    echo $tes;
+
+    //16//
+    echo '<hr>';
+    $Special = "2,543.12";
+    $nums = str_replace("," , "" , $Special);
+    echo $nums;
+
+    //17//
+    echo '<hr>';
+    $wwrod = "The quick brown fox jumps over the lazy dog";
+    $testtt = implode(" ", array_slice(explode(" ", $wwrod), 0, 5));
+    echo $testtt;
+
+    //18//
+
+
+
+
 
 
 
