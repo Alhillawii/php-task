@@ -47,7 +47,30 @@
     // }
     // echo $factorial;
 
+    //5//
+    echo '<hr>';
+    $nu = 9;
+    $numlo = [0 , 1];
+    for ($i = 2; $i < $nu; $i++) {
+        $numlo[] = $numlo [$i - 1] + $numlo[$i - 2];
+    }
+    echo implode("," , $numlo);
+
+    //6//
+    echo '<hr>';
+    $text = "Orange Coding Academy";
+    $letter = "c";
+    $count = 0;
+    for ($i=0; $i <strlen($text) ; $i++) { 
+        if (strtolower($text[$i]) === $letter){
+            $count++;
+        }
+    }
+    echo $count;
     
+
+
+
 
 
 
