@@ -53,7 +53,7 @@
      $lol = lower($tes);
      echo $lol;
 
-     //4//
+     //4//????
      echo '<hr>';
      function swap(&$x , &$y)  {
         $num = $x;
@@ -67,7 +67,7 @@
     swap($x , $y);
      echo "After swapimg : x = $x , y = $y";
 
-     //5//
+     //5//????????
      echo '<hr>';
     //  $num=407;  
     //  $total=0;  

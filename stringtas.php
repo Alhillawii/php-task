@@ -61,7 +61,7 @@
      $lastthree = substr($string , -3);
      echo $lastthree;
 
-     //7//
+     //7//?????
      echo '<hr>';
        //  function get($strings , $lenght){
     //     $m = strlen($strings) - 1;
@@ -80,19 +80,19 @@
     //  echo $ran;
      //??????????//
 
-     //8//
+     //8//?????
      echo '<hr>';
-     function replaceFirstWord($sentence, $new_word) {
-        $words = explode(' ', $sentence);
-        $words[0] = $new_word;
-        $new_sentence = implode(' ', $words);
+   //   function replaceFirstWord($sentence, $new_word) {
+   //      $words = explode(' ', $sentence);
+   //      $words[0] = $new_word;
+   //      $new_sentence = implode(' ', $words);
         
-        return $new_sentence;
-    }
-    $sentence = 'That new trainee is so genius.';
-    $new_word = 'Our';
-    $new_sentence = replaceFirstWord($sentence, $new_word);
-    echo  $new_sentence;
+   //      return $new_sentence;
+   //  }
+   //  $sentence = 'That new trainee is so genius.';
+   //  $new_word = 'Our';
+   //  $new_sentence = replaceFirstWord($sentence, $new_word);
+   //  echo  $new_sentence;
 
     //9//
     echo ' <hr>';
@@ -104,7 +104,7 @@
     echo '<hr>';
     echo strcmp('dragonball','dragonball');
 
-    //11/
+    //11/????
     echo '<hr>';
 //     function getNextLetter($letter) {
 //       if (strlen($letter) !== 1 || !ctype_alpha($letter)) {
