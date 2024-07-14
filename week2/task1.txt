@@ -1,0 +1,94 @@
+1-What is the DataBase?
+-A database is  collection of data that is organized.
+which we called it structured data. We can set the data into tables with rows (requier), columns(feilds) than when creat the 
+table we can make the CRUD opration 
+
+2-what is the SQL ?
+- It's stands for structured query language. And we cas access and mainpulate database.
+and it's programming language, we cas access the data insdie it  and we use it to create or delete oe insert in the database table.
+
+3- what is the different between Relational and non-relational database?
+
+*Ralational (SQL) DataBase:
+1- it is a talbles (rows and columns).
+2- fixed schema
+3-strong consistency
+
+EX: MySQL , SQL server , PostgreSQL.
+
+*NON-Relational (NoSQL) DataBase:
+1- document-based ,  take key-value , wide-colmuns.
+2-Schema-less or dynamic schema
+3-Eventual consistency.
+
+EX: MongoDB , Redis , Cassandra.
+
+4-what is MySQL and the Features and typical use cases?
+The MySQL is open-source relational database management system (RDMS)
+RDMS : relational database management system. and it's cross-platform.
+
+the Features :
+a- Ralational DataBase management system.
+b- Easy to use.
+c- client / server architecture.
+d- It is scalable.
+e- speed or fast.
+f- high flexibility.
+
+MySQL (Use Cases):
+a- Web Application.
+b- CMS.
+c- OLAP/OLTP Systems.
+
+
+5-What is the Data Types in SQL?
+thier three main data Types :
+
+1-string : the most common in string :
+a- CHAR : a fixed lenght (can right numbers , letters or spiecail characters).
+EX : 'CHAR(10)' can store a string with exactly 10 characters.
+b- VARCHAR : a variable lenght .
+EX : 'VARCHAR'(255) can store a string with a maximum length of 255 characters.
+c- TEXT : holds a string It has no limits  likr paragrph.
+EX : TINYTEXT, MEDIUMTEXT, and LONGTEXT, each allowing for progressively larger amounts of text.
+d- BLOB : can set photo or video . 
+
+2-Numeric : the most common in Numeric :
+a- INT : (integer), it is a  numbers  
+EX: (1,2,3,4,5);
+b- BOOLEAN : (BOOL) if the number zero give you false, if the numbers nozero considered true.
+c- FLOAT(P) : p mean number from (0 to 24) the data become FLOAT() but is the number (25 to 53) becomes DOUBLE().
+
+3-date and time : the most common in date and time :
+a- DATe : the give date 
+EX : (30/1/2002);
+b- TIME : give you hours and minutes and seconds .
+EX : 10 : 44 : 22.
+c- YEAR : give the year in four numbers it's become from (1901 to 2155);
+EX : "2019"
+
+
+6-What is Table Structures ?
+a- Primary-keys :  it cac be used to indenfity one 
+important element that cannot be repeated and is usually used with the ID , national number , etc.
+and is always uniquely indenfied.
+
+b- NULL & NOTNULL :
+*NULL : allows to have a null value we use it if no have a value.
+
+*NOTNULL : cannot have a null value mean cannot go out without write data 
+you must right .
+
+Ex : (Name , Number).
+
+c- Auto-Increment :
+when put the id i use it to counts automatically wehen start from 1 it's will +1 automatically 
+and we use it often with Primary-key where need to provide a unique value for every record you add.
+
+
+7- SQL Command Practice: Write the SQL command to select and use the StudentDB database.?
+
+I HAD CREATE DataBase and  i give it name student than i had create table named teacher than i had write 
+command to create table name teacher as colmuns than i had insert a new teacher record into teacher table 
+than i use update the name of the teacher of the teacher table with id=1 in the last i had delete the teacher in the table.
+
