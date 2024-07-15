@@ -92,3 +92,21 @@ I HAD CREATE DataBase and  i give it name student than i had create table named 
 command to create table name teacher as colmuns than i had insert a new teacher record into teacher table 
 than i use update the name of the teacher of the teacher table with id=1 in the last i had delete the teacher in the table.
 
+///////
+CREATE DataBase student;
+creat table teacher (
+    id INT PEIMARY KEY auto-increment,
+    Name VARCHAR (100) NOT NULL , 
+    Email VARCHAR (100),
+    Enrollment_date DATE
+);
+inset INTO teacher (
+    id , Name , Eamil , Enrollment_date
+)
+values ( 1 , "AYAh ", "ayahhillawi@gmail.com ", '30/1/2002');
+
+update teacher
+set Name = "ayosh"
+where id = 1;
+
+delete from teacher where id = 1;
