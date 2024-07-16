@@ -1,0 +1,89 @@
+1- SELECT * FROM `employees`
+
+2-SELECT first_name , last_name , salary 
+from employees
+
+3-SELECT * FROM `employees`
+WHERE salary >50.000
+SELECT * FROM `employees`
+WHERE salary <50.000
+
+4-SELECT first_name  , last_name
+FROM employees 
+WHERE first_name LIKE 'J%'
+
+5-SELECT id , email , job_title
+FROM employees 
+WHERE id IN (1, 2 , 3)
+
+6-SELECT * 
+FROM employees 
+ORDER BY hire_date DESC
+
+7-SELECT COUNT(*) AS total 
+FROM employees
+
+8-SELECT SUM(salary) AS totalsalary
+FROM employees
+
+9-SELECT AVG(salary) AS totalsalary
+FROM employees
+
+10-SELECT MIN(salary) AS totalsalary
+FROM employees
+
+11-SELECT MAX(salary) AS totalsalary
+FROM employees
+
+12-a-SELECT * 
+FROM employees
+WHERE salary > 50.000
+
+b-SELECT department , AVG(salary)
+FROM employees
+GROUP by department
+HAVING AVG(salary) > 50.000
+
+12-CREATE TABLE employees (
+    emp_id INT PRIMARY KEY,
+    Name VARCHAR(50)
+);
+
+CREATE TABLE employee_details (
+    profile_name INT PRIMARY KEY,
+    emp_id INT UNIQUE,
+    FOREIGN KEY (emp_id) REFERENCES employees(emp_id)
+);
+
+13-CREATE TABLE departments (
+    department_id INT AUTO_INCREMENT PRIMARY KEY,
+    department_name VARCHAR(50) NOT NULL
+);
+
+
+CREATE TABLE employees (
+    emp_id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    department_id INT,
+    FOREIGN KEY (department_id) REFERENCES departments(department_id)
+);
+
+
+14-CREATE TABLE students (
+    student_id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL
+);
+CREATE TABLE courses (
+    course_id INT AUTO_INCREMENT PRIMARY KEY,
+    course_name VARCHAR(100) NOT NULL
+);
+CREATE TABLE student_courses (
+    student_id INT,
+    course_id INT,
+    PRIMARY KEY (student_id, course_id),
+    FOREIGN KEY (student_id) REFERENCES students(student_id),
+    FOREIGN KEY (course_id) REFERENCES courses(course_id)
+);

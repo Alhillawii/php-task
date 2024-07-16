@@ -110,3 +110,7 @@ set Name = "ayosh"
 where id = 1;
 
 delete from teacher where id = 1;
+
+
+
+
