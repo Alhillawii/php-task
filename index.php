@@ -54,7 +54,7 @@
             <th>Title</th>
             <th>Description</th>
             <th>Due Date</th>
-            <!-- <th>Status</th> -->
+            <th>Status</th>
         </tr>
         <?php
         include "connection.php";
@@ -69,7 +69,7 @@
             echo "<td>{$row['Title']}</td>";
             echo "<td>{$row['Description']}</td>";
             echo "<td>{$row['Due_Date']}</td>";
-            // echo "<td>{$row['Status']}</td>";
+            echo "<td>{$row['STATUS']}</td>";
             echo "<td><a href='edit.php?id={$row['id']}'>Edit</a> | <a href='delete.php?id={$row['id']}'>Delete</a></td>";
             echo "</tr>";
         }

@@ -63,18 +63,19 @@
 <body>
     <h2>Add new task</h2>
     <form action="addtas.php" method="post">
-        <label for="taskName">Task name:</label><br>
-        <input type="text" name="taskName" required><br>
+        <label for="Title">Title</label><br>
+        <input type="text" name="Title"><br>
         <label for="Description">Description:</label><br>
         <textarea name="Description" required></textarea><br>
         <label for="due">Due Date:</label><br>
-        <input type="date" name="date" required><br>
-        <!-- <label for="status">Status:</label><br>
-         <select name="status" required>
+        <input type="Date" name="Due_Date" required><br>
+        <br>
+        <label for="STATUS">STATUS:</label><br>
+        <select name="STATUS" required>
             <option value="TO DO">TO DO</option>
             <option value="IN PROGRESS">IN PROGRESS</option>
             <option value="DONE">DONE</option>
-        </select><br><br> -->
+        </select><br><br>
         <input type="submit" value="Submit"> 
     </form>
     
@@ -82,12 +83,12 @@
     include "connection.php";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $taskName = $_POST['taskName'];
+        $Title = $_POST['Title'];
         $Description = $_POST['Description'];
-        $date = $_POST['date'];
-        // $status = $_POST['status'];
+        $Due_Date = $_POST['Due_Date'];
+        $STATUS = $_POST['STATUS'];
 
-        $query = "INSERT INTO task (`Title`, `Description`, `Due_Date`]) VALUES ('$taskName', '$Description', '$date')";
+        $query = "INSERT INTO `task`(`Title`, `Description`, `Due_Date`,`STATUS`) VALUES ('$Title','$Description','$Due_Date','$STATUS')";
         if (mysqli_query($conn, $query)) {
             header("Location: index.php");
             exit;
@@ -95,6 +96,40 @@
             echo "Error: " . $query . "<br>" . mysqli_error($conn);
         }
     }
+
+    // if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    //     $Title = $_POST['Title'];
+    //     $Description = $_POST['Description'];
+    //     $Due_Date = $_POST['Due_Date'];
+    
+    //     $stmt = $conn->prepare("INSERT INTO task (Title, Description, Due_Date) VALUES (?, ?, ?)");
+    //     $stmt->bind_param("sss", $Title, $Description, $Due_Date);
+    
+    //     if ($stmt->execute()) {
+    //         header("Location: index.php");
+    //         exit;
+    //     } else {
+    //         echo "Error: " . $stmt->error;
+    //     }
+    
+    //     $stmt->close();
+    // }
+
+    // if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    //     $Title = mysqli_real_escape_string($conn, $_POST['Title']);
+    //     $Description = mysqli_real_escape_string($conn, $_POST['Description']);
+    //     $Due_Date = mysqli_real_escape_string($conn, $_POST['Due_Date']);
+    
+    //     $query = "INSERT INTO task (Title, Description, Due_Date) VALUES ('$Title', '$Description', '$Due_Date')";
+    
+    //     if (mysqli_query($conn, $query)) {
+    //         header("Location: index.php");
+    //         exit;
+    //     } else {
+    //         echo "Error: " . $query . "<br>" . mysqli_error($conn);
+    //     }
+    // }
+    
 
     ?>
 </body>
