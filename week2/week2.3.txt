@@ -251,6 +251,35 @@ HAVING COUNT(oi.order_item_id);
 
 
 28-
+SELECT 
+    e.employee_id,
+    e.first_name,
+    e.last_name,
+    d.department_name,
+    CASE 
+        WHEN ep.project_id IS NOT NULL THEN 'Participating in Projects'
+        ELSE 'Not Participating in Projects'
+    END AS participation_status
+FROM 
+    employees e
+    LEFT JOIN employee_projects ep ON e.employee_id = ep.employee_id
+    LEFT JOIN projects p ON ep.project_id = p.project_id
+    LEFT JOIN departments d ON e.department_id = d.department_id;
+
+
+29-SELECT e.first_name, e.last_name, d.department_name, p.project_name, p.start_date
+FROM employees e
+JOIN employee_projects ep ON e.employee_id = ep.employee_id
+JOIN projects p ON ep.project_id = p.project_id
+JOIN departments d ON e.department_id = d.department_id
+WHERE p.start_date > '2023-05-10';
+
+
+30-SELECT e.first_name, e.last_name, d.departments_name, p.project_name
+FROM employees e 
+JOIN departments d ON e.department_id = d.department_id
+JOIN projects p ON e.project_id = p.project_id  
+ORDER BY e.first_name, e.last_name, d.departments_name, p.project_name;
 
 
 
