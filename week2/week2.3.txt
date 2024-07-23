@@ -23,3 +23,235 @@ FROM departments d
 RIGHT JOIN employees e ON d.department_id = e.department_id 
 
 4-
+
+
+5-SELECT 
+    e1.employee_id AS EmployeeID,
+    CONCAT(e1.first_name, ' ', e1.last_name) AS EmployeeName,
+    e2.employee_id AS ManagerID,
+    CONCAT(e2.first_name, ' ', e2.last_name) AS ManagerName
+FROM 
+    employees e1
+LEFT JOIN 
+    employees e2 ON e1.manager_id = e2.employee_id;
+
+
+6-SELECT 
+    employees.employee_id,
+    employees.department_id AS employee_department_id,
+    departments.department_id AS dept_department_id,
+FROM 
+    employees
+CROSS JOIN 
+    departments;
+
+
+7-SELECT 
+    e.employee_id, 
+    e.first_name, 
+    e.last_name, 
+    d.department_name, 
+    e.salary
+FROM 
+    employees e
+JOIN 
+    departments d ON e.department_id = d.department_id;
+
+
+8-USE company;
+
+SELECT 
+    d.department_name,
+    SUM(s.amount) AS sumsalary
+FROM 
+    employees e
+JOIN 
+    salaries s ON e.employee_id = s.employee_id
+JOIN 
+    departments d ON e.department_id = d.department_id
+GROUP BY 
+    d.department_name;
+
+
+
+9-SELECT e.employee_id, e.first_name, e.last_name, p.project_name, p.start_date
+FROM employees e
+JOIN employee_projects ep ON e.employee_id = ep.employee_id
+JOIN projects p ON ep.project_id = p.project_id
+WHERE p.start_date > '2023-03-01';
+
+
+10-SELECT e.first_name, e.last_name, d.department_name
+FROM employees e
+JOIN departments d ON e.department_id = d.department_id
+WHERE d.department_name = 'HR';
+
+11-SELECT 
+    o.order_id,
+    o.order_date,
+    c.customer_id,
+    c.customer_name
+FROM 
+    orders o
+JOIN 
+    customers c
+ON 
+    o.customer_id = c.customer_id;
+
+
+12-SELECT employees.employee_id, employees.first_name, employees.last_name, departments.department_name
+FROM employees
+JOIN departments USING (department_id);
+
+
+
+13-SELECT 
+    c.customer_name,
+    COUNT(o.order_id) AS total_orders
+FROM 
+    orders o
+JOIN 
+    customers c ON o.customer_id = c.customer_id
+GROUP BY 
+    c.customer_id, c.customer_name;
+
+
+14-SELECT c.customer_name, COUNT(o.order_id) AS order_count
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+GROUP BY c.customer_id, c.customer_name
+HAVING COUNT(o.order_id) > 3;
+
+15-SELECT 
+    e.employee_id,
+    e.first_name,
+    e.last_name,
+    d.department_name,
+    CASE
+        WHEN d.department_name = 'HR' THEN 'MANAGER'
+        ELSE 'Other Department'
+    END AS department_classification
+FROM 
+    employees e
+JOIN 
+    departments d
+ON 
+    e.department_id = d.department_id;
+
+
+16-SELECT 
+    e.employee_id,
+    e.first_name,
+    e.last_name,
+    d.department_name
+FROM 
+    employees e
+JOIN 
+    departments d
+ON 
+    e.department_id = d.department_id
+ORDER BY 
+    d.department_name ASC, 
+    e.last_name ASC, 
+    e.first_name ASC;
+
+
+17-SELECT d.department_name, p.project_name
+FROM employees e
+INNER JOIN departments d ON e.department_id = d.department_id
+INNER JOIN employee_projects ep ON e.employee_id = ep.employee_id
+INNER JOIN projects p ON ep.project_id = p.project_id
+ORDER BY d.department_name, e.last_name, p.project_name;
+
+18-SELECT 
+    e.employee_id,
+    p.project_id,
+    c.client_name
+FROM 
+    employees e
+LEFT JOIN 
+    projects p ON e.employee_id = p.client_id
+LEFT JOIN 
+    clients c ON p.client_id = c.client_id
+
+
+19/23-SELECT 
+    e.employee_id,
+    p.project_id,
+    c.client_name
+FROM 
+    employees e
+RIGHT JOIN 
+    projects p ON e.employee_id = p.client_id
+RIGHT JOIN 
+    clients c ON p.client_id = c.client_id
+
+
+20-
+
+
+21-SELECT e1.employee_id AS Employee_ID,
+       d1.department_name AS Department,
+       e2.employee_id AS Manager_ID
+FROM employees e1
+LEFT JOIN employees e2 ON e1.manager_id = e2.employee_id
+LEFT JOIN departments d1 ON e1.department_id = d1.department_id
+WHERE e1.department_id = e2.department_id;
+
+
+22-SELECT * FROM employees
+CROSS JOIN departments
+CROSS JOIN projects;
+
+
+24-SELECT 
+    d.department_name,
+    AVG(s.amount) AS total_salary_expenditure
+FROM 
+    departments d
+JOIN 
+    employees e ON d.department_id = e.department_id
+JOIN 
+    salaries s ON e.employee_id = s.employee_id
+
+
+
+25/26-SELECT 
+    o.order_id,
+    oi.quantity,
+    o.order_date
+FROM 
+    orders o
+JOIN 
+    order_items oi ON o.order_id = oi.order_id
+JOIN 
+    products p ON oi.product_id = p.product_id
+WHERE 
+    p.product_name = 'Product Z';
+
+26-SELECT 
+    c.customer_name,
+    SUM(oi.quantity) AS total_quantity_ordered
+FROM 
+    customers c
+JOIN 
+    orders o ON c.customer_id = o.customer_id
+JOIN 
+    order_items oi ON o.order_id = oi.order_id
+GROUP BY 
+    c.customer_name;
+
+
+27-SELECT c.customer_name, COUNT(oi.order_item_id) AS total_items_ordered
+FROM customers c
+JOIN orders o ON c.customer_id = o.customer_id
+JOIN order_items oi ON o.order_id = oi.order_id
+GROUP BY c.customer_id, c.customer_name
+HAVING COUNT(oi.order_item_id);
+
+
+28-
+
+
+
+
