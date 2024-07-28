@@ -73,16 +73,16 @@ $car1 = new Car('Toyota', 'Camry', '1235');
 $car2 = new Car('ford', 'fugen', '8899');
 
 class inventory{
-    private $cars = [];
+    public $cars = [];
 
     public function addcar($car){
         $this->cars[] = $car;
     }
 
     public function removecar($VIN){
-        foreach($this->cars as $key=>$car){
+        foreach($this->cars as $car){
             if ($car->getVIN()== $VIN) {
-                unset($this->cars[$key]);
+                unset($this->cars[$VIN]);
                 echo"the care VIN: $VIN removed";
                 echo "<br>";
                 return true;
@@ -97,14 +97,18 @@ class inventory{
 $inv = new inventory();
 
 $inv->addcar($car1);
-$inv->addcar($car2);
+$inv->addcar($car2); 
 echo "this is inventory";
 echo "<br>";
 
+echo $car1->getDetails();
+echo "<br>";
 
-$inv->removecar("1235");
+$inv->removecar("1237");
 echo "removed";
 echo "<br>";
+// echo "<pre>";
+// var_dump($inv->cars)
 
 
 ?>
