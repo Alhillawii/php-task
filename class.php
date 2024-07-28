@@ -80,9 +80,9 @@ class inventory{
     }
 
     public function removecar($VIN){
-        foreach($this->cars as $car){
+        foreach($this->cars as $key=>$car){
             if ($car->getVIN()== $VIN) {
-                unset($this->cars[$VIN]);
+                unset($this->cars[$key]);
                 echo"the care VIN: $VIN removed";
                 echo "<br>";
                 return true;
@@ -92,28 +92,19 @@ class inventory{
         echo "<br>";
         return false;
     }
-
-    public function listcar(){
-        foreach($this->cars as $car){
-            echo $car->getDetails();
-        }
-    }
 }
 
 $inv = new inventory();
 
-// $inv->addcar($car1);
-// $inv->addcar($car2);
+$inv->addcar($car1);
+$inv->addcar($car2);
+echo "this is inventory";
+echo "<br>";
 
-// echo "this is inventory";
-// echo "<br>";
 
-// $inv->listcar();
-// echo "<br>";
+$inv->removecar("1235");
+echo "removed";
+echo "<br>";
 
-// $inv->removecar("Camry");
-// echo "removed";
-// echo "<br>";
 
-// $inv->listcar();
 ?>
