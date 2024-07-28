@@ -97,40 +97,6 @@
         }
     }
 
-    // if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    //     $Title = $_POST['Title'];
-    //     $Description = $_POST['Description'];
-    //     $Due_Date = $_POST['Due_Date'];
-    
-    //     $stmt = $conn->prepare("INSERT INTO task (Title, Description, Due_Date) VALUES (?, ?, ?)");
-    //     $stmt->bind_param("sss", $Title, $Description, $Due_Date);
-    
-    //     if ($stmt->execute()) {
-    //         header("Location: index.php");
-    //         exit;
-    //     } else {
-    //         echo "Error: " . $stmt->error;
-    //     }
-    
-    //     $stmt->close();
-    // }
-
-    // if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    //     $Title = mysqli_real_escape_string($conn, $_POST['Title']);
-    //     $Description = mysqli_real_escape_string($conn, $_POST['Description']);
-    //     $Due_Date = mysqli_real_escape_string($conn, $_POST['Due_Date']);
-    
-    //     $query = "INSERT INTO task (Title, Description, Due_Date) VALUES ('$Title', '$Description', '$Due_Date')";
-    
-    //     if (mysqli_query($conn, $query)) {
-    //         header("Location: index.php");
-    //         exit;
-    //     } else {
-    //         echo "Error: " . $query . "<br>" . mysqli_error($conn);
-    //     }
-    // }
-    
-
     ?>
 </body>
 </html>
