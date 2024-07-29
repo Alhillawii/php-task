@@ -28,8 +28,8 @@
 // echo "hio";
 
 class car{
-    public $make;
-    public $model;
+    private $make;
+    private $model;
     private $VIN;
 
     public function __construct($make, $model, $VIN){
