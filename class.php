@@ -213,18 +213,20 @@ class classroom{
 
 $claroom = new classroom();
 $claroom->addstu($student1);
+// echo $claroom->addstu($student2);
 echo "<br>";
 $claroom->addstu($student2);
 
 $claroom->liststudents();
 
-// $claroom->removestu("6262");
-// echo "this ID removed";
+// $claroom->removestu()
+echo "this ID removed";
 // echo "<br>";
 // echo "this ID {$this->$student2} removed";
 
 // unset($student1);
 // unset($student2);
+
  
 
 
